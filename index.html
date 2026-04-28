@@ -50,7 +50,6 @@ function isMobile() {
 function takePhoto() {
   const canvas = document.getElementById('photo');
   const ctx = canvas.getContext('2d');
-  const note = document.getElementById('note').value;
 
   canvas.width = video.videoWidth;
   canvas.height = video.videoHeight;
@@ -73,14 +72,6 @@ function takePhoto() {
   });
 
   document.getElementById('time').innerText = time;
-
-  ctx.fillStyle = "rgba(0,0,0,0.6)";
-  ctx.fillRect(0, canvas.height - 80, canvas.width, 80);
-
-  ctx.fillStyle = "white";
-  ctx.font = "16px Arial";
-  ctx.fillText(time, 10, canvas.height - 45);
-  ctx.fillText(note, 10, canvas.height - 20);
 }
 
 async function shareData() {
